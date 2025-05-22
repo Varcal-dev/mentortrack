@@ -26,15 +26,15 @@ Sigue los pasos a continuación para ejecutar la aplicación localmente:
 1. 📥 **Clona el repositorio:**
    ```bash
    git clone <repository_url>
-    ´´´
+    
 2. 📂 Accede a la carpeta del proyecto:
     ```bash
     cd mentortack
-    ´´´
+    
 3. 📦 Instala las dependencias:
     ```bash
     npm install
-    ´´´
+    
 4. ⚙️ Configura las variables de entorno:
 
     Crea un archivo .env en la raíz del proyecto y define las siguientes variables:
@@ -42,11 +42,11 @@ Sigue los pasos a continuación para ejecutar la aplicación localmente:
     PORT=3000
     MONGODB_URI=mongodb://localhost:27017/mentortack
     JWT_SECRET=tu_clave_secreta
-    ´´´
+    
 5. ▶️ Inicia el servidor:
     ```bash
     npm start
-    ´´´
+    
     La aplicación estará disponible en http://localhost:3000.
 
 # 📁 Estructura del Proyecto
