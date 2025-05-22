@@ -38,8 +38,27 @@ const obtenerProyectoPorId = async (req, res) => {
   }
 };
 
+// Búsqueda de proyectos con filtros por título, institución, docente o área
+const buscarProyectos = async (req, res) => {
+  try {
+    const { titulo, institucion, docenteId, area } = req.query;
+    let filtro = {};
+
+    if (titulo) filtro.titulo = new RegExp(titulo, "i"); // búsqueda insensible a mayúsculas
+    if (institucion) filtro.institucion = new RegExp(institucion, "i");
+    if (area) filtro.area = new RegExp(area, "i");
+    if (docenteId) filtro.creador = docenteId;
+
+    const proyectos = await Proyecto.find(filtro).populate("creador", "nombre apellido email");
+    res.json(proyectos);
+  } catch (error) {
+    res.status(500).json({ message: "Error en la búsqueda de proyectos", error });
+  }
+};
+
 module.exports = {
   crearProyecto,
   obtenerProyectos,
-  obtenerProyectoPorId
+  obtenerProyectoPorId,
+  buscarProyectos
 };
