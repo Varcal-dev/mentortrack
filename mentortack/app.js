@@ -5,6 +5,8 @@ const proyectoRoutes = require("./routes/proyectos.routes");
 const avanceRoutes = require("./routes/avances.routes");
 const estadoProyectoRoutes = require("./routes/estadoProyecto.routes");
 const reportesRoutes = require("./routes/reportes.routes");
+const authRoutes = require("./routes/auth.routes");
+//const cors = require('cors');
 
 
 const app = express(); 
@@ -13,6 +15,9 @@ app.use(cors());
 app.use(express.json());
 
 // Rutas
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+
+app.use("/api/auth", authRoutes); // <-- aquí se monta /login
 app.use("/api/usuarios", userRoutes);
 app.use("/api/proyectos", proyectoRoutes);
 app.use("/api/avances", avanceRoutes);
