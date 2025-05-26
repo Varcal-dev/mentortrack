@@ -1,10 +1,7 @@
-# 🚀 MentorTrack
-
-**MentorTrack** es una aplicación web diseñada para facilitar el registro, seguimiento y control de ejecución de **proyectos escolares de investigación**, promoviendo la colaboración entre estudiantes, docentes y coordinadores.
+Aplicación web diseñada para facilitar el registro, seguimiento y control de ejecución de proyectos escolares de investigación, promoviendo la colaboración entre estudiantes, docentes y coordinadores.
 
 La plataforma permite registrar avances, hitos, documentos y estados del proyecto de forma organizada y accesible.
 
----
 
 ## 📦 Tecnologías Utilizadas
 
@@ -17,11 +14,8 @@ La plataforma permite registrar avances, hitos, documentos y estados del proyect
 - 🌐 **CORS** – Compartición de recursos entre dominios.
 - 📄 **PDFKit** – Generación de reportes en PDF.
 
----
-
 ## 🛠️ Instalación
-
-Sigue los pasos a continuación para ejecutar la aplicación localmente:
+Ejecucion de la aplicación localmente:
 
 1. 📥 **Clona el repositorio:**
    ```bash
@@ -29,7 +23,7 @@ Sigue los pasos a continuación para ejecutar la aplicación localmente:
     
 2. 📂 Accede a la carpeta del proyecto:
     ```bash
-    cd mentortack
+    cd molanojholbypf
     
 3. 📦 Instala las dependencias:
     ```bash
@@ -51,15 +45,15 @@ Sigue los pasos a continuación para ejecutar la aplicación localmente:
 
 # 📁 Estructura del Proyecto
 
-    mentortack/
+molanojholbypf/
     │
     ├── config/           # Configuración de la base de datos
     ├── controllers/      # Lógica de negocio (controladores)
     ├── middlewares/      # Funciones intermedias (auth, logs, etc.)
     ├── models/           # Modelos de datos con Mongoose
     ├── routes/           # Definición de rutas y endpoints
-    ├── uploads/          # (pendiente) Documentos y archivos subidos
-    ├── .env              # Variables de entorno (no se sube al repo)
+    ├── uploads/          # Documentos y archivos subidos
+    ├── .env              # Variables de entorno
     ├── server.js         # Archivo principal del servidor
     └── README.md         # Este documento
 
@@ -101,22 +95,3 @@ Sigue los pasos a continuación para ejecutar la aplicación localmente:
 
     GET /api/reportes/proyectos – Generar y descargar un reporte PDF de proyectos
 
-# ✍️ Contribuciones
-    ¡Las contribuciones son bienvenidas!
-    Puedes crear un fork del proyecto, proponer mejoras, abrir issues o enviar pull requests.
-
-    📬 Para dudas, contáctame a través del repositorio o abre un issue.
-
-# 📌 Notas Pendientes
-
-- Subida de documentos y evidencias (archivos)
-
-- Implementación del frontend con React.js
-
-- Autenticación robusta con roles y permisos
-
-- Tests automatizados
-
-# 🧠 Licencia
-    Este proyecto está bajo la licencia MIT.
-    Puedes usarlo, modificarlo y compartirlo libremente.
