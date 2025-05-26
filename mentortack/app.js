@@ -7,6 +7,8 @@ const estadoProyectoRoutes = require("./routes/estadoProyecto.routes");
 const reportesRoutes = require("./routes/reportes.routes");
 const authRoutes = require("./routes/auth.routes");
 //const cors = require('cors');
+const usersRoutes = require("./routes/users.routes");
+
 
 
 const app = express(); 
@@ -23,6 +25,8 @@ app.use("/api/proyectos", proyectoRoutes);
 app.use("/api/avances", avanceRoutes);
 app.use("/api/estadoProyecto", estadoProyectoRoutes);
 app.use("/api/reportes", reportesRoutes);
+
+app.use("/api/users", usersRoutes); // <-- aquí se monta /users
 
 app.get("/", (req, res) => {
   res.send("API funcionando");
