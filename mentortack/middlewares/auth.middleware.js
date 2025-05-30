@@ -18,9 +18,8 @@ const verifyToken = (req, res, next) => {
   }
 };
 
-
-const requireRole = (role) => (req, res, next) => {
-  if (req.user.rol !== role) {
+const requireRole = (roles) => (req, res, next) => {
+  if (!roles.includes(req.user.rol)) {
     return res.status(403).json({ message: "No autorizado" });
   }
   next();
