@@ -56,9 +56,32 @@ const buscarProyectos = async (req, res) => {
   }
 };
 
+const actualizarEstadoProyecto = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { estado } = req.body;
+
+    const proyecto = await Proyecto.findByIdAndUpdate(
+      id,
+      { estado },
+      { new: true }
+    );
+
+    if (!proyecto) {
+      return res.status(404).json({ message: "Proyecto no encontrado" });
+    }
+
+    res.json(proyecto);
+  } catch (error) {
+    res.status(500).json({ message: "Error al actualizar el estado", error });
+  }
+};
+
+
 module.exports = {
   crearProyecto,
   obtenerProyectos,
   obtenerProyectoPorId,
-  buscarProyectos
+  buscarProyectos,
+  actualizarEstadoProyecto,
 };

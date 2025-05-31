@@ -4,13 +4,16 @@ const {
   crearProyecto,
   obtenerProyectos,
   obtenerProyectoPorId,
-  buscarProyectos
+  buscarProyectos,
+  actualizarEstadoProyecto,
 } = require("../controllers/proyectos.controller");
 
 const { verifyToken, requireRole } = require("../middlewares/auth.middleware");
 
-// Solo docentes y coordinadores pueden crear proyectos
-router.post("/", verifyToken, requireRole(["docente", "coordinador"]), crearProyecto);
+// Solo docentes pueden crear proyectos
+router.post("/", verifyToken, requireRole("docente"), crearProyecto);
+// Cambiar estado del Proyecto
+router.patch("/:id/estado", verifyToken, actualizarEstadoProyecto);
 
 // Todos los roles pueden consultar
 router.get("/", verifyToken, obtenerProyectos);

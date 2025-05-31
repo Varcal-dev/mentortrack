@@ -15,6 +15,7 @@ const proyectoSchema = new mongoose.Schema({
   fechaFin: Date,
   detalleCronograma: String,
   presupuesto: String,
+  detallesPresupuesto: String,
   institucion: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Institucion",
