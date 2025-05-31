@@ -9,8 +9,8 @@ const {
 
 const { verifyToken, requireRole } = require("../middlewares/auth.middleware");
 
-// Solo docentes pueden crear proyectos
-router.post("/", verifyToken, requireRole("docente"), crearProyecto);
+// Solo docentes y coordinadores pueden crear proyectos
+router.post("/", verifyToken, requireRole(["docente", "coordinador"]), crearProyecto);
 
 // Todos los roles pueden consultar
 router.get("/", verifyToken, obtenerProyectos);

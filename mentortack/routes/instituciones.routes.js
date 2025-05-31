@@ -1,20 +1,24 @@
 const express = require('express');
 const router = express.Router();
 const institucionesController = require('../controllers/instituciones.controller');
+const { verifyToken, requireRole } = require("../middlewares/auth.middleware");
+
+//router.post("/", verifyToken, requireRole("coordinador"), crearProyecto);
+
 
 // Create a new Institucion
-router.post('/', institucionesController.create);
+router.post('/',verifyToken, requireRole("coordinador"), institucionesController.create);
 
-// Retrieve all Instituciones
-router.get('/', institucionesController.findAll);
+// Obtener todas Instituciones
+router.get('/', verifyToken, institucionesController.findAll);
 
-// Retrieve a single Institucion with id
-router.get('/:id', institucionesController.findOne);
+// Obtener una Institucion with id
+router.get('/:id', verifyToken, institucionesController.findOne);
 
-// Update an Institucion with id
-router.put('/:id', institucionesController.update);
+// Actualizar an Institucion with id
+router.put('/:id', verifyToken, requireRole("coodrinador"), institucionesController.update);
 
-// Delete an Institucion with id
-router.delete('/:id', institucionesController.delete);
+// Eliminar una Institucion with id
+router.delete('/:id', verifyToken, requireRole("coordinador"), institucionesController.delete);
 
 module.exports = router;

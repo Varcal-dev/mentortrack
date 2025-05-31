@@ -11,9 +11,15 @@ const proyectoSchema = new mongoose.Schema({
   titulo: { type: String, required: true },
   area: String,
   objetivos: String,
-  cronograma: String,
+  fechaInicio: Date,
+  fechaFin: Date,
+  detalleCronograma: String,
   presupuesto: String,
-  institucion: String,
+  institucion: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Institucion",
+    required: true,
+  },
   observaciones: String,
   estado: {
     type: String,

@@ -21,7 +21,7 @@ const crearProyecto = async (req, res) => {
 // Obtener todos los proyectos
 const obtenerProyectos = async (req, res) => {
   try {
-    const proyectos = await Proyecto.find().populate("creador", "nombre apellido email");
+    const proyectos = await Proyecto.find().populate("creador", "nombre apellido email").populate("institucion", "nombre");
     res.json(proyectos);
   } catch (error) {
     res.status(500).json({ message: "Error al obtener los proyectos", error });
@@ -31,7 +31,7 @@ const obtenerProyectos = async (req, res) => {
 // Obtener un proyecto por ID
 const obtenerProyectoPorId = async (req, res) => {
   try {
-    const proyecto = await Proyecto.findById(req.params.id).populate("creador", "nombre apellido email");
+    const proyecto = await Proyecto.findById(req.params.id).populate("creador", "nombre apellido email").populate("institucion", "nombre");
     res.json(proyecto);
   } catch (error) {
     res.status(500).json({ message: "Error al obtener el proyecto", error });
