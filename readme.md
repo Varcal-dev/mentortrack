@@ -25,7 +25,7 @@ Sigue los pasos a continuación para ejecutar la aplicación localmente:
 
 1. 📥 **Clona el repositorio:**
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/Varcal-dev/mentortrack
     
 2. 📂 Accede a la carpeta del proyecto:
     ```bash
@@ -47,7 +47,7 @@ Sigue los pasos a continuación para ejecutar la aplicación localmente:
     ```bash
     npm start
     
-    La aplicación estará disponible en http://localhost:3000.
+La aplicación estará disponible en http://localhost:3000.
 
 # 📁 Estructura del Proyecto
 
