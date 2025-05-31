@@ -102,10 +102,10 @@ Sigue los pasos a continuación para ejecutar la aplicación localmente:
     GET /api/reportes/proyectos – Generar y descargar un reporte PDF de proyectos
 
 # ✍️ Contribuciones
-    ¡Las contribuciones son bienvenidas!
-    Puedes crear un fork del proyecto, proponer mejoras, abrir issues o enviar pull requests.
+   ¡Las contribuciones son bienvenidas!
+   Puedes crear un fork del proyecto, proponer mejoras, abrir issues o enviar pull requests.
 
-    📬 Para dudas, contáctame a través del repositorio o abre un issue.
+   📬 Para dudas, contáctame a través del repositorio o abre un issue.
 
 # 📌 Notas Pendientes
 
@@ -118,5 +118,5 @@ Sigue los pasos a continuación para ejecutar la aplicación localmente:
 - Tests automatizados
 
 # 🧠 Licencia
-    Este proyecto está bajo la licencia MIT.
-    Puedes usarlo, modificarlo y compartirlo libremente.
+   Este proyecto está bajo la licencia MIT.
+   Puedes usarlo, modificarlo y compartirlo libremente.
