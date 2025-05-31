@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const User = require("../models/user.model");
 const {
   registerUser,
   loginUser,
@@ -25,10 +26,10 @@ router.get("/estudiantes", verifyToken, requireRole(["docente", "coordinador"]),
     const estudiantes = await User.find({ rol: "estudiante" }, "nombre apellido identificacion grado");
     res.json(estudiantes);
   } catch (error) {
-    res.status(500).json({ message: "Error al obtener estudiantes", error });
+    console.error("Error fetching estudiantes:", error);
+    res.status(500).json({ message: "Error al obtener estudiantes", error: error.message });
   }
 });
 
 
 module.exports = router;
-    

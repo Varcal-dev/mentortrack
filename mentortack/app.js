@@ -19,14 +19,15 @@ app.use(express.json());
 // Rutas
 app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
-app.use("/api/auth", authRoutes); // <-- aquí se monta /login
+app.use("/api/auth", authRoutes); // <-- /login
 app.use("/api/usuarios", userRoutes);
+app.use("/api/users", usersRoutes); // <-- aquí se monta /users
 app.use("/api/proyectos", proyectoRoutes);
 app.use("/api/avances", avanceRoutes);
 app.use("/api/estadoProyecto", estadoProyectoRoutes);
 app.use("/api/reportes", reportesRoutes);
 
-app.use("/api/users", usersRoutes); // <-- aquí se monta /users
+
 
 app.get("/", (req, res) => {
   res.send("API funcionando");
