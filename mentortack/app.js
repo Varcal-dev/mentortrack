@@ -8,6 +8,7 @@ const reportesRoutes = require("./routes/reportes.routes");
 const authRoutes = require("./routes/auth.routes");
 //const cors = require('cors');
 const usersRoutes = require("./routes/users.routes");
+const institucionesRoutes = require("./routes/instituciones.routes");
 
 
 
@@ -26,6 +27,7 @@ app.use("/api/proyectos", proyectoRoutes);
 app.use("/api/avances", avanceRoutes);
 app.use("/api/estadoProyecto", estadoProyectoRoutes);
 app.use("/api/reportes", reportesRoutes);
+app.use("/api/instituciones", institucionesRoutes);
 
 
 

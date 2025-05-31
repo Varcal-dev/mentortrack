@@ -23,7 +23,7 @@ router.delete("/:id", verifyToken, requireRole("coordinador"), deleteUser);
 // Obtener estudiantes
 router.get("/estudiantes", verifyToken, requireRole(["docente", "coordinador"]), async (req, res) => {
   try {
-    const estudiantes = await User.find({ rol: "estudiante" }, "nombre apellido identificacion grado");
+    const estudiantes = await User.find({ rol: "estudiante" }, "nombre apellido identificacion institucion grado");
     res.json(estudiantes);
   } catch (error) {
     console.error("Error fetching estudiantes:", error);
