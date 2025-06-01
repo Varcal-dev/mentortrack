@@ -1,4 +1,5 @@
 # 🚀 MentorTrack
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Varcal-dev/mentortrack)
 
 **MentorTrack** es una aplicación web diseñada para facilitar el registro, seguimiento y control de ejecución de **proyectos escolares de investigación**, promoviendo la colaboración entre estudiantes, docentes y coordinadores.
 
