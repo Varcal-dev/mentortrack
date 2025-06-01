@@ -29,7 +29,8 @@ app.use("/api/estadoProyecto", estadoProyectoRoutes);
 app.use("/api/reportes", reportesRoutes);
 app.use("/api/instituciones", institucionesRoutes);
 
-
+// Esto hace accesibles los archivos guardados en 'uploads/' vía HTTP
+app.use('/uploads', express.static('uploads'));
 
 app.get("/", (req, res) => {
   res.send("API funcionando");

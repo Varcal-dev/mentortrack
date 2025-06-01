@@ -13,7 +13,7 @@ const { verifyToken, requireRole } = require("../middlewares/auth.middleware");
 // Solo docentes pueden crear proyectos
 router.post("/", verifyToken, requireRole("docente"), crearProyecto);
 // Cambiar estado del Proyecto
-router.patch("/:id/estado", verifyToken, actualizarEstadoProyecto);
+router.patch("/:id/estado", verifyToken, requireRole("coordinador"), actualizarEstadoProyecto);
 
 // Todos los roles pueden consultar
 router.get("/", verifyToken, obtenerProyectos);
